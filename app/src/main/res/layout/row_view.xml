@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="6dp"
     android:background="@color/colorTransparent"
-    android:orientation="vertical"
- >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/variableImageView"
                 android:layout_width="97dp"
@@ -27,20 +26,17 @@
                 android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/no_avatar"
-                />
+                android:src="@drawable/no_avatar" />
 
             <TextView
                 android:id="@+id/variableTextViewUsersName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
-                 />
-
+                android:textSize="16sp" />
 
 
         </LinearLayout>
@@ -48,8 +44,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/variableTextViewCity"
@@ -61,8 +56,7 @@
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/variableTextViewAction"
@@ -75,8 +69,7 @@
                 android:text="TextView"
                 android:textColor="@android:color/black"
                 android:textSize="19sp"
-                android:textStyle="normal"
-                 />
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/variableTextViewDescription"
@@ -85,18 +78,16 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Here comes a multi line action  djpsj djds dojsdpj dlfkjfdj dflkjfdsj ldkfjpsdfj dfjpoj fsdjs'p ojdfop sdfjp' psdfjpo djoi oidjfp opdjp ojdo oidjfp iodsfjpi "
-                 />
+                android:text="Here comes a multi line action  djpsj djds dojsdpj dlfkjfdj dflkjfdsj ldkfjpsdfj dfjpoj fsdjs'p ojdfop sdfjp' psdfjpo djoi oidjfp opdjp ojdo oidjfp iodsfjpi " />
 
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
 
         <Button
@@ -109,8 +100,7 @@
             android:background="#64d804"
             android:onClick="yesBtn"
             android:text="YES"
-            android:textColor="@android:color/white"
-            />
+            android:textColor="@android:color/white" />
 
 
         <Button
@@ -118,26 +108,25 @@
             android:layout_width="100dp"
             android:layout_height="27dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="6dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:background="#64d804"
             android:text="got a Question?"
             android:textColor="@android:color/white"
-            android:textSize="8sp"
-            />
+            android:textSize="8sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/variableTextViewYesPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Be the first to say Yes!"
-        android:layout_gravity="center_horizontal"
-        />
+        android:text="Be the first to say Yes!" />
 
 
     <TextView
@@ -148,8 +137,6 @@
         android:visibility="gone"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="192dp" />
-
-
 
 
 </LinearLayout>

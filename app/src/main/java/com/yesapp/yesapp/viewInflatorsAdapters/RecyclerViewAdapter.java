@@ -82,7 +82,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                    if(dataSnapshot.child("/Yes/name1").getValue()!=null) {
                holder.variableTextViewYesPerson.setText(dataSnapshot.child("/Yes/name1").getValue().toString()+" said Yes!");
                    }
-               String authorsUid =dataSnapshot.child("authorsEmail").getValue().toString();
+               String authorsUid = dataSnapshot.child("authorsEmail").getValue().toString();
                DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("users").child(authorsUid).child("thumb_image");
                databaseReference1.addValueEventListener(new ValueEventListener() {
                    @Override

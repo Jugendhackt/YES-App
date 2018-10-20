@@ -61,7 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - replace the contents of the view with that element
         holder.mFriendName.setText(mDataset[position]);
         Picasso.get().load(friendsPicturesArray[position]).into(holder.mFriendImage);
-        holder.mFriendStatus.setText("Hallo du bist toll" +" und das weiß jeder");
+        holder.mFriendStatus.setText("Hallo du bist toll" +" und das weiß Jeder");
 
 
     }

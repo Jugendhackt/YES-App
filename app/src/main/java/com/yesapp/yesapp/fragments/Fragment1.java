@@ -11,6 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +34,7 @@ import java.util.ArrayList;
 public class Fragment1 extends Fragment {
 SwipeRefreshLayout swipeRefreshLayout;
 RecyclerView mainScreenRecyclerView;
+Spinner spinner;
 
     public Fragment1() {
         // Required empty public constructor
@@ -48,22 +52,63 @@ RecyclerView mainScreenRecyclerView;
         super.onViewCreated(view, savedInstanceState);
 
         swipeRefreshLayout = (SwipeRefreshLayout) getView().findViewById(R.id.swipeRefreshLayout);
-        refresh();//to load for the first time
+        refresh(0);//to load for the first time
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                refresh();
+                refresh(0);
             }
         });
 
 
+        spinner = getView().findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+                Toast.makeText(getContext(),position +" Selected",Toast.LENGTH_SHORT).show();
+                refresh(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+                Toast.makeText(getContext(),"Nothing Selected",Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
     }
 
-    public void refresh(){
+
+
+    public void refresh(int position) {
+
+
         //necessary References
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = database.getReference("posts");
+        String ref = null;
+        switch (position){
+            case 0:
+            ref = "Berlinposts";
+                break;
+            case 1:
+                ref = "Hamburgposts";
+
+                break;
+
+            default:
+                ref = "posts";
+
+                break;
+
+
+        }
+
+        DatabaseReference databaseReference   = database.getReference(ref);
+
+
 
         // Pull the posts from the cloud and put them in a listView
         databaseReference.addValueEventListener(new ValueEventListener() {
