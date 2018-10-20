@@ -33,7 +33,11 @@ import java.util.ArrayList;
 
 // This is to read data from a database and place it in a list view
 public class MainActivity extends AppCompatActivity {
+// Hi
 
+
+
+    
     RecyclerView mainScreenRecyclerView;           //to contain the posts
     SwipeRefreshLayout swipeRefreshLayout; //to refresh
     private int onBackPressed = 0;         //to track how many times back was pressed
