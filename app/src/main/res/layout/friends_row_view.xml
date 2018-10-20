@@ -34,7 +34,7 @@
         android:layout_height="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
-        android:text="Hey there, I am a Yes Theorist"
+        android:text="Hallo ich bin toll"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/friend_display_name"

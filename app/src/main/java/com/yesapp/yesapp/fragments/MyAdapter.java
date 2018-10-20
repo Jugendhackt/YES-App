@@ -13,6 +13,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private String[] mDataset;
+    private int[] friendsPicturesArray;
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -34,7 +36,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(String[] myDataset) {
+    public MyAdapter(String[] myDataset, int[] friendsPicturesArray) {
+
+        this.friendsPicturesArray = friendsPicturesArray;
         mDataset = myDataset;
     }
 
@@ -56,8 +60,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.mFriendName.setText(mDataset[position]);
-        Picasso.get().load(R.drawable.no_avatar).into(holder.mFriendImage);
-        holder.mFriendStatus.setText("Hey there, I am a Yes Theorist!");
+        Picasso.get().load(friendsPicturesArray[position]).into(holder.mFriendImage);
+        holder.mFriendStatus.setText("Hallo du bist toll" +" und das weiß jeder");
 
 
     }

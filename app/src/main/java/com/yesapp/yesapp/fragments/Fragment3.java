@@ -59,16 +59,28 @@ public class Fragment3 extends Fragment {
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-         String[] mDataset = new String[4];
+         String[] mDataset = new String[6];
 
-         mDataset[0]="Adam";
-        mDataset[1]="Samir";
+         mDataset[0]="Anna";
+        mDataset[1]="Charlotte";
         mDataset[2]="Anna-Lena";
-        mDataset[3]="Samara";
+        mDataset[3]="Abraham";
+        mDataset[4]="Natalie";
+        mDataset[5]="John";
+
+        int[] friendsPicturesArray = new int[6];
+        friendsPicturesArray[0] =R.drawable.bild15;
+        friendsPicturesArray[1] =R.drawable.bild13;
+        friendsPicturesArray[2] =R.drawable.bild14;
+        friendsPicturesArray[3] =R.drawable.bild12;
+        friendsPicturesArray[4] =R.drawable.bild16;
+        friendsPicturesArray[5] =R.drawable.bild17;
+
+
 
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(mDataset);
+        mAdapter = new MyAdapter(mDataset,friendsPicturesArray);
         mRecyclerView.setAdapter(mAdapter);
 
     }
