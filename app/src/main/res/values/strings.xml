@@ -41,6 +41,7 @@
     <string name="city_prompt">Choose a city</string>
 
     <string-array name="city_arrays">
+        <item>All</item>
         <item>Berlin</item>
         <item>Hamburg</item>
         <item>Bremen</item>
