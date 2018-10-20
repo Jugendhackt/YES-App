@@ -31,9 +31,8 @@ public class Create extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
-        cityName = (EditText) findViewById(R.id.cityname);
-        action = (EditText) findViewById(R.id.action);
-        description = (EditText) findViewById(R.id.editText2);
+       // action = (EditText) findViewById(R.id.action);
+      //  description = (EditText) findViewById(R.id.editText2);
 
 
 
@@ -46,50 +45,52 @@ public class Create extends AppCompatActivity {
         }
 
 
-    public void post(View view) {
-        if (!cityName.getText().toString().equals("") && !action.getText().toString().equals("")
-                && !description.getText().toString().equals("")) {//to check that the user wrote something
 
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference databaseReference = database.getReference("posts");
-
-
-
-            Posts post = new Posts();
-            post.setCityName(cityName.getText().toString());
-            post.setAction(action.getText().toString());
-            post.setDescription(description.getText().toString().trim());
-
-
-
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-            post.setAuthorsEmail(user.getUid());
-            post.setName(user.getDisplayName());
-
-
-
-            databaseReference.push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-
-                        Toast.makeText(Create.this, "Post Add Successfully", Toast.LENGTH_SHORT).show();
-                        //unnecessary
-                        //Intent i = new Intent(Create.this, MainActivity.class);
-                        //startActivity(i);
-                        finish();
-                    } else {
-                        Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
-
-        }//end of if
-        else {
-            Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
-
-        }
-    }
+    public void post(View view) {}
+//    public void post(View view) {
+//        if (!cityName.getText().toString().equals("") && !action.getText().toString().equals("")
+//                && !description.getText().toString().equals("")) {//to check that the user wrote something
+//
+//            FirebaseDatabase database = FirebaseDatabase.getInstance();
+//            DatabaseReference databaseReference = database.getReference("posts");
+//
+//
+//
+//            Posts post = new Posts();
+//            post.setCityName(cityName.getText().toString());
+//            post.setAction(action.getText().toString());
+//            post.setDescription(description.getText().toString().trim());
+//
+//
+//
+//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//
+//            post.setAuthorsEmail(user.getUid());
+//            post.setName(user.getDisplayName());
+//
+//
+//
+//            databaseReference.push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                @Override
+//                public void onComplete(@NonNull Task<Void> task) {
+//                    if (task.isSuccessful()) {
+//
+//                        Toast.makeText(Create.this, "Post Add Successfully", Toast.LENGTH_SHORT).show();
+//                        //unnecessary
+//                        //Intent i = new Intent(Create.this, MainActivity.class);
+//                        //startActivity(i);
+//                        finish();
+//                    } else {
+//                        Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            });
+//
+//
+//        }//end of if
+//        else {
+//            Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
+//
+//        }
+//    }
 }

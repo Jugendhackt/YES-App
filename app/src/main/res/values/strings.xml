@@ -37,4 +37,31 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="city_prompt">Choose a city</string>
+
+    <string-array name="city_arrays">
+        <item>Berlin</item>
+        <item>Hamburg</item>
+        <item>Bremen</item>
+        <item>Ulm</item>
+        <item>Schwerin</item>
+        <item>Wismar</item>
+        <item>Frankfurt</item>
+    </string-array>
+
+    <string name="organization_prompt">Choose a city</string>
+
+    <string-array name="organization_arrays">
+        <item>Sport</item>
+        <item>Art</item>
+        <item>Movie/Series</item>
+        <item>Education</item>
+        <item></item>
+        <item>Wismar</item>
+        <item>Frankfurt</item>
+    </string-array>
+
+
+
 </resources>
