@@ -35,7 +35,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 // Hi
 
-
+// mitth
 
     
     RecyclerView mainScreenRecyclerView;           //to contain the posts
