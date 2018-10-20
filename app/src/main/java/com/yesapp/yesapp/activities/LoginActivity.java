@@ -86,12 +86,12 @@ public class LoginActivity extends AppCompatActivity implements ResetPasswordLis
 
 
 
-        mToolbar = (Toolbar) findViewById(R.id.login_toolbar);
-        mToolbar.setTitle("Login");
+       // mToolbar = (Toolbar) findViewById(R.id.login_toolbar);
+   //     mToolbar.setTitle("Login");
 //        mToolbar.setCollapsible(true);
-        mToolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
-        mToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        setSupportActionBar(mToolbar);
+    //    mToolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+    //    mToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+     //   setSupportActionBar(mToolbar);
 
 
     }
