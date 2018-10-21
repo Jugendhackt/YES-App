@@ -88,29 +88,45 @@ Spinner spinner;
 
         //necessary References
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        String ref = null;
+        String ref;
         switch (position){
-            case 0:
-                ref = "posts";
-                break;
             case 1:
-                ref = "Hamburgposts";
+                ref = "Berlin";
+                break;
+            case 2:
+                ref = "Hamburg";
+                break;
+            case 3:
+                ref = "Bremen";
+                break;
+            case 4:
+                ref = "Ulm";
+                break;
 
+            case 5:
+                ref = "Schwerin";
+                break;
+            case 6:
+                ref = "Wismar";
+                break;
+            case 7:
+                ref = "Frankfurt";
                 break;
 
             default:
-                ref = "posts";
+                ref = "";
 
                 break;
 
 
         }
 
-        DatabaseReference databaseReference   = database.getReference(ref);
+        DatabaseReference databaseReference   = database.getReference("posts");
 
 
 
         // Pull the posts from the cloud and put them in a listView
+        final String finalRef1 = ref;
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -132,13 +148,14 @@ Spinner spinner;
 
                     for (DataSnapshot post : posts) {
 
-                        Posts postObj = post.getValue(Posts.class);
-                        postObj.setPostId(post.getKey());
+                        if (post.child("cityName").getValue().equals(finalRef1) || finalRef1.equals("") ) {
+                            Posts postObj = post.getValue(Posts.class);
+                            postObj.setPostId(post.getKey());
 
-                        //add a new post to the arrayList with help of the posts class
-                        ItemsArrayList.add(new ListItem(postObj.getCityName(), postObj.getAction(),postObj.getName(),postObj.getDescription(),postObj.getPostId(),postObj.getAuthorsEmail()));
+                            //add a new post to the arrayList with help of the posts class
+                            ItemsArrayList.add(new ListItem(postObj.getCityName(), postObj.getAction(), postObj.getName(), postObj.getDescription(), postObj.getPostId(), postObj.getAuthorsEmail()));
 
-
+                        }
 
 
                     }
