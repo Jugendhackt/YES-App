@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blue_logo2"
+    android:background="@drawable/blue_logo"
     tools:context=".activities.StartActivity">
 
     <Button
@@ -24,7 +24,7 @@
         android:id="@+id/goToReg"
         android:layout_width="222dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@android:color/white"
@@ -41,12 +41,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="235dp"
-        android:text="Welcome to  the Yes Family App"
+        android:layout_marginTop="28dp"
+        android:text="Welcome to  the Yes App"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

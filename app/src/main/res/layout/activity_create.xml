@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="45dp"
-        android:text="Where do you want to do your organization?"
+        android:text="Where do you want to do the activity?"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -31,6 +31,7 @@
         tools:layout_editor_absoluteY="74dp"
 
         />
+
     <Spinner
         android:id="@+id/cityname"
         android:layout_width="240dp"
@@ -47,7 +48,7 @@
         android:layout_height="23dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="45dp"
-        android:text="What is your organization"
+        android:text="What kind of activity?"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -70,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="45dp"
-        android:text="Please enter the details of organization"
+        android:text="Please enter some details"
         android:textColor="#000000"
         android:textSize="15sp"
         android:textStyle="bold" />

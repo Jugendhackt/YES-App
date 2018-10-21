@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ public class Create extends AppCompatActivity {
     EditText cityName,description,action;
     DatabaseReference myRef;
     TextView text;
+    Spinner citySpinner, actionspinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +34,9 @@ public class Create extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
-       // action = (EditText) findViewById(R.id.action);
-      //  description = (EditText) findViewById(R.id.editText2);
-
+       description = (EditText) findViewById(R.id.editText2);
+         citySpinner = (Spinner) findViewById(R.id.cityname);
+        actionspinner = (Spinner) findViewById(R.id.nameOfOrganization);
 
 
     }
@@ -46,51 +49,46 @@ public class Create extends AppCompatActivity {
 
 
 
-    public void post(View view) {}
-//    public void post(View view) {
-//        if (!cityName.getText().toString().equals("") && !action.getText().toString().equals("")
-//                && !description.getText().toString().equals("")) {//to check that the user wrote something
-//
-//            FirebaseDatabase database = FirebaseDatabase.getInstance();
-//            DatabaseReference databaseReference = database.getReference("posts");
-//
-//
-//
-//            Posts post = new Posts();
-//            post.setCityName(cityName.getText().toString());
-//            post.setAction(action.getText().toString());
-//            post.setDescription(description.getText().toString().trim());
-//
-//
-//
-//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//
-//            post.setAuthorsEmail(user.getUid());
-//            post.setName(user.getDisplayName());
-//
-//
-//
-//            databaseReference.push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                @Override
-//                public void onComplete(@NonNull Task<Void> task) {
-//                    if (task.isSuccessful()) {
-//
-//                        Toast.makeText(Create.this, "Post Add Successfully", Toast.LENGTH_SHORT).show();
-//                        //unnecessary
-//                        //Intent i = new Intent(Create.this, MainActivity.class);
-//                        //startActivity(i);
-//                        finish();
-//                    } else {
-//                        Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            });
-//
-//
-//        }//end of if
-//        else {
-//            Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
-//
-//        }
-//    }
+
+    public void post(View view) {
+
+
+
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference databaseReference = database.getReference("posts");
+
+
+
+            Posts post = new Posts();
+            post.setCityName(citySpinner.getSelectedItem().toString());
+            post.setAction(actionspinner.getSelectedItem().toString());
+            post.setDescription(description.getText().toString().trim());
+
+
+
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+            post.setAuthorsEmail(user.getUid());
+            post.setName(user.getDisplayName());
+
+
+
+            databaseReference.push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+
+                        Toast.makeText(Create.this, "Post Add Successfully", Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                        Toast.makeText(Create.this, "Error : post not add 🙁 ", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
+        }//end of if
+
+
 }
