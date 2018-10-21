@@ -91,7 +91,7 @@ Spinner spinner;
         String ref = null;
         switch (position){
             case 0:
-            ref = "Berlinposts";
+                ref = "posts";
                 break;
             case 1:
                 ref = "Hamburgposts";
