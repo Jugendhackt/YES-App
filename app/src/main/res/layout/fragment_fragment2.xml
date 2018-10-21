@@ -33,7 +33,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Marcello Bonatti"
+                    android:text="Marcello Bonatto"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -86,7 +86,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alexandra Claire"
+                    android:text="Alexandra Clare"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     android:textStyle="bold"
